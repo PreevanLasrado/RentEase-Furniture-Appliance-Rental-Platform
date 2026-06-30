@@ -29,7 +29,16 @@ createAdmin();
 const app = express();
 
 // Enable CORS
-app.use(cors({ origin: 'http://localhost:5173' }));
+// app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      process.env.CLIENT_URL
+    ],
+    credentials: true,
+  })
+);
 
 // Body parser
 app.use(express.json());
@@ -52,12 +61,23 @@ app.get('/', (req, res) => {
   res.send('RentEase API is running...');
 });
 
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "RentEase Backend is running successfully"
+  });
+});
+
 // Error middleware
 app.use(notFound);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+module.exports = app;
