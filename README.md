@@ -1,114 +1,85 @@
 # 🏠 RentEase – Furniture & Appliance Rental Platform
 
-RentEase is a modern full-stack MERN web application designed to simplify the process of renting furniture and home appliances. It provides a seamless experience for customers to browse products, manage rentals, securely complete payments, and track their orders, while offering administrators complete control over products, inventory, users, and orders.
+RentEase is a full-stack Furniture & Appliance Rental Platform developed using the **MERN Stack (MongoDB, Express.js, React.js, and Node.js)**. The application provides a seamless platform for users to browse, rent, and manage furniture and home appliances, while allowing administrators to efficiently manage products, inventory, orders, and users through an intuitive admin dashboard.
 
 ---
 
-## 🚀 Features
+## 📌 Features
 
 ### 👤 User Features
-- Secure User Authentication (JWT)
-- User Registration & Login
+- User Registration & Login (JWT Authentication)
 - Browse Furniture & Appliances
-- Advanced Search & Category Filters
-- Product Details Page
-- Wishlist Management
-- Shopping Cart
+- Search and Filter Products
+- View Product Details
+- Add to Wishlist
+- Add to Cart
 - Secure Checkout Process
 - Online Payment Integration
-- Order Placement & Tracking
-- User Profile Management
-- Responsive Design
+- Place Rental Orders
+- View Order History
+- Manage User Profile
+- Secure Logout
 
-### 🛠️ Admin Features
-- Admin Dashboard
-- Product Management (CRUD)
-- Category Management
-- Order Management
-- User Management
+### 🔑 Admin Features
+- Admin Login
+- Dashboard Overview
+- Add New Products
+- Update Product Details
+- Delete Products
+- Manage Categories
+- Manage Users
+- View & Manage Orders
 - Inventory & Stock Management
-- Product Availability Control
-- Sales Monitoring
+- Product Availability Management
 
 ---
 
-## 🛒 Core Functionalities
-
-- Furniture Rental
-- Appliance Rental
-- Real-Time Inventory Management
-- Secure Authentication & Authorization
-- Wishlist & Cart System
-- Order Management
-- Payment Processing
-- Dynamic Product Filtering
-- Responsive UI for Desktop & Mobile
-
----
-
-## 🏗️ Tech Stack
+## 🛠️ Tech Stack
 
 ### Frontend
 - React.js
 - Vite
-- React Router
+- Tailwind CSS
 - Axios
-- CSS / Bootstrap / Tailwind CSS (depending on your project)
+- React Router DOM
 
 ### Backend
 - Node.js
 - Express.js
-- MongoDB
-- Mongoose
 - JWT Authentication
-- bcrypt.js
+- Multer (Image Upload)
 
 ### Database
 - MongoDB Atlas
+- Mongoose
 
-### Other Tools
-- Git & GitHub
-- Postman
-- Cloudinary (if used)
-- Razorpay / Stripe (if used)
+### Payment Gateway
+- Razorpay
 
 ---
 
 ## 📂 Project Structure
 
 ```
-RentEase/
+RentEase - Furniture & Appliance Rental Platform
 │
-├── frontend/
-│   ├── src/
-│   ├── public/
+├── client
+│   ├── src
+│   ├── public
 │   └── package.json
 │
-├── backend/
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── uploads/
-│   └── server.js
+├── server
+│   ├── config
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── services
+│   ├── uploads
+│   └── package.json
 │
 └── README.md
 ```
-
----
-
-## 🔑 Key Highlights
-
-- Modern MERN Stack Architecture
-- RESTful API Integration
-- Secure JWT Authentication
-- Protected Routes
-- Dynamic Product Listings
-- Real-Time Inventory Updates
-- Clean & Responsive User Interface
-- Optimized Database Operations
-- Scalable Project Structure
 
 ---
 
@@ -117,60 +88,87 @@ RentEase/
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/RentEase.git
+git clone https://github.com/PreevanLasrado/RentEase-Furniture-Appliance-Rental-Platform.git
 ```
 
-### Install Dependencies
-
-Frontend
+### Navigate to the Project
 
 ```bash
-cd frontend
-npm install
-npm run dev
+cd RentEase-Furniture-Appliance-Rental-Platform
 ```
 
-Backend
+### Install Client Dependencies
 
 ```bash
-cd backend
+cd client
 npm install
+```
+
+### Install Server Dependencies
+
+```bash
+cd ../server
+npm install
+```
+
+---
+
+## ▶️ Run the Application
+
+### Start Backend
+
+```bash
+cd server
 npm start
 ```
 
----
+### Start Frontend
 
-## 🌐 Environment Variables
-
-Create a `.env` file inside the backend directory and configure:
-
-```env
-PORT=
-MONGO_URI=
-JWT_SECRET=
+```bash
+cd client
+npm run dev
 ```
 
 ---
 
-## 🎯 Future Enhancements
+## 🔒 Environment Variables
+
+Create a `.env` file inside the **server** folder.
+
+```env
+PORT=5000
+MONGO_URI=YOUR_MONGODB_CONNECTION_STRING
+JWT_SECRET=YOUR_SECRET_KEY
+RAZORPAY_KEY_ID=YOUR_RAZORPAY_KEY_ID
+RAZORPAY_SECRET=YOUR_RAZORPAY_SECRET
+```
+
+**Note:** Never upload your `.env` file to GitHub.
+
+---
+
+## 🚀 Future Enhancements
 
 - Product Reviews & Ratings
 - Rental Duration Selection
-- Coupon & Discount System
+- Live Inventory Tracking
 - Email Notifications
-- Live Order Status Tracking
+- Coupon & Discount System
 - AI-Based Product Recommendations
-- Analytics Dashboard
-- Multi-Vendor Support
+- Mobile Responsive Improvements
+- Dark Mode
+- Multi-language Support
 
 ---
 
-## 🤝 Contributing
+## 👨‍💻 Author
 
-Contributions, issues, and feature requests are welcome. Feel free to fork the repository and submit a pull request.
+**Preevan Lasrado**
+
+GitHub: https://github.com/PreevanLasrado
 
 ---
 
-## 📄 License
+## 📜 License
 
-This project is developed for educational and portfolio purposes.
+This project is developed for educational, learning, and portfolio purposes.
