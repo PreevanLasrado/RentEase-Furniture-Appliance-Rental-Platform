@@ -139,8 +139,6 @@ Create a `.env` file inside the **server** folder.
 PORT=5000
 MONGO_URI=YOUR_MONGODB_CONNECTION_STRING
 JWT_SECRET=YOUR_SECRET_KEY
-RAZORPAY_KEY_ID=YOUR_RAZORPAY_KEY_ID
-RAZORPAY_SECRET=YOUR_RAZORPAY_SECRET
 ```
 
 **Note:** Never upload your `.env` file to GitHub.
