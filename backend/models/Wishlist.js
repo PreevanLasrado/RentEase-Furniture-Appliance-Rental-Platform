@@ -7,18 +7,19 @@ const wishlistSchema = new mongoose.Schema(
       ref: 'User',
       required: true,
     },
-    products: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product',
-      },
-    ],
+    product: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Product',
+      required: true,
+    },
   },
   {
     timestamps: true,
   }
 );
 
-const Wishlist = mongoose.model('Wishlist', wishlistSchema);
+// Explicitly define collection name as 'wishlists'
+const Wishlist = mongoose.model('Wishlist', wishlistSchema, 'wishlists');
 
 module.exports = Wishlist;
+

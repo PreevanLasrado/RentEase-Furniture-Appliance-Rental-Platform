@@ -1,5 +1,42 @@
-node_modules
+# ==========================
+# Dependencies
+# ==========================
+node_modules/
+
+# ==========================
+# Environment Variables
+# ==========================
 .env
-dist
-build
+client/.env
+server/.env
+
+# ==========================
+# Build Output
+# ==========================
+dist/
+build/
+
+# ==========================
+# Logs
+# ==========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==========================
+# Operating System Files
+# ==========================
 .DS_Store
+Thumbs.db
+
+# ==========================
+# VS Code
+# ==========================
+.vscode/
+
+# ==========================
+# Coverage Reports
+# ==========================
+coverage/

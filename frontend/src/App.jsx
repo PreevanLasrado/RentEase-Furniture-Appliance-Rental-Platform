@@ -1,11 +1,16 @@
 import React from 'react';
-import Home from './pages/Home';
+import { BrowserRouter } from 'react-router-dom';
+import ScrollToTop from './components/common/ScrollToTop';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Home />
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-[#F7F7F7]">
+        <AppRoutes />
+      </div>
+    </BrowserRouter>
   );
 }
 

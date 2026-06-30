@@ -37,21 +37,21 @@ const benefits = [
 
 const Benefits = () => {
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
+    <section className="py-12 -mb-22 bg-gray-50 relative overflow-hidden">
       {/* Decorative background */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-white skew-x-12 translate-x-1/4 opacity-50 pointer-events-none" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h2 
+
+      <div className="container mx-auto px-26 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-2">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight"
+            className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight"
           >
-            Why Choose <span className="text-gradient">RentEase</span>
+            Why Choose <span className="text-gradient">RentEase?</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -62,7 +62,7 @@ const Benefits = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
@@ -73,16 +73,16 @@ const Benefits = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="glass p-8 rounded-2xl relative group"
+                className="p-8 rounded-2xl relative group"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
-                
-                <div className="w-14 h-14 rounded-xl bg-red-50 text-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+
+                <div className="w-14 h-14 rounded-xl bg-red-50 text-primary flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                   <Icon className="w-7 h-7" />
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-justify">
                   {benefit.description}
                 </p>
               </motion.div>

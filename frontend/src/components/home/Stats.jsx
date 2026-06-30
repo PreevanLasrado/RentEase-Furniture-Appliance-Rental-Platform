@@ -19,7 +19,7 @@ const Stats = () => {
   });
 
   return (
-    <section className="py-20 bg-white border-y border-gray-100" ref={ref}>
+    <section className="py-20" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
           {stats.map((stat, index) => (

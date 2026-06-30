@@ -10,12 +10,21 @@ const productRoutes = require('./routes/productRoutes');
 const rentalRoutes = require('./routes/rentalRoutes');
 const maintenanceRoutes = require('./routes/maintenanceRoutes');
 const userRoutes = require('./routes/userRoutes');
+const contactRoutes = require('./routes/contactRoutes');
+const cartRoutes = require('./routes/cartRoutes');
+const wishlistRoutes = require('./routes/wishlistRoutes');
+const orderRoutes = require('./routes/orderRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 
 // Load env vars
 dotenv.config();
 
 // Connect to database
 connectDB();
+
+// Create default admin
+const createAdmin = require('./utils/createAdmin');
+createAdmin();
 
 const app = express();
 
@@ -31,6 +40,12 @@ app.use('/api/products', productRoutes);
 app.use('/api/rentals', rentalRoutes);
 app.use('/api/maintenance', maintenanceRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/contact', contactRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/wishlist', wishlistRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/admin', adminRoutes);
+
 
 // Root route
 app.get('/', (req, res) => {

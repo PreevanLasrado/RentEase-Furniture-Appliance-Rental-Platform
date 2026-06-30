@@ -79,6 +79,7 @@ const updateProduct = async (req, res, next) => {
       images,
       description,
       availability,
+      stockStatus,
     } = req.body;
 
     const product = await Product.findById(req.params.id);
@@ -89,10 +90,32 @@ const updateProduct = async (req, res, next) => {
       product.subCategory = subCategory || product.subCategory;
       product.monthlyRent = monthlyRent || product.monthlyRent;
       product.securityDeposit = securityDeposit || product.securityDeposit;
-      product.stock = stock || product.stock;
       product.images = images || product.images;
       product.description = description || product.description;
-      if (availability !== undefined) product.availability = availability;
+      if (stock !== undefined) {
+        product.stock = Number(stock);
+        product.availability = Number(stock) > 0;
+        product.stockStatus = Number(stock) > 0 ? 'In Stock' : 'Out of Stock';
+      } else if (stockStatus !== undefined) {
+        product.stockStatus = stockStatus;
+        if (stockStatus === 'Out of Stock') {
+          product.availability = false;
+          product.stock = 0;
+        } else if (stockStatus === 'In Stock') {
+          product.availability = true;
+          if (product.stock <= 0) {
+            product.stock = 1;
+          }
+        }
+      } else if (availability !== undefined) {
+        product.availability = availability;
+        product.stockStatus = availability ? 'In Stock' : 'Out of Stock';
+        if (availability && product.stock <= 0) {
+          product.stock = 1;
+        } else if (!availability) {
+          product.stock = 0;
+        }
+      }
 
       const updatedProduct = await product.save();
       res.json(updatedProduct);
